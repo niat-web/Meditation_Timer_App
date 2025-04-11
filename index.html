@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meditation Timer App</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container text-center">
+            <h1>Meditation Timer</h1>
+            <p>Find your inner peace.</p>
+            <button id="darkModeToggle" class="btn btn-outline-light">
+                <i class="fas fa-moon"></i> Dark Mode
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Timer Section -->
+        <section id="timerSection" class="mb-4">
+            <h2>Timer</h2>
+            <div class="card neumorphic">
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label for="duration" class="form-label">Duration (minutes):</label>
+                        <select class="form-select" id="duration">
+                            <option value="5">5</option>
+                            <option value="10">10</option>
+                            <option value="15">15</option>
+                            <option value="30">30</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="technique" class="form-label">Meditation Technique:</label>
+                        <input type="text" class="form-control" id="technique" placeholder="e.g., Mindfulness">
+                    </div>
+                    <div class="d-flex justify-content-around">
+                        <button id="startBtn" class="btn btn-success"><i class="fas fa-play"></i> Start</button>
+                        <button id="pauseBtn" class="btn btn-warning" disabled><i class="fas fa-pause"></i> Pause</button>
+                        <button id="resetBtn" class="btn btn-danger" disabled><i class="fas fa-stop"></i> Reset</button>
+                    </div>
+                    <div id="timerDisplay" class="mt-3 text-center display-4">00:00</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Session Tracking & Analytics -->
+        <section id="sessionSection" class="mb-4">
+            <h2>Session Tracking</h2>
+            <div class="card neumorphic">
+                <div class="card-body">
+                    <p>Total Sessions: <span id="totalSessions">0</span></p>
+                    <p>Total Time Meditated: <span id="totalTime">0</span> minutes</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- History Log -->
+        <section id="historySection" class="mb-4">
+            <h2>History Log</h2>
+            <div class="card neumorphic">
+                <div class="card-body">
+                    <ul id="historyList" class="list-group">
+                        <!-- History items will be added here dynamically -->
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Daily Quote -->
+        <section id="quoteSection" class="mb-4">
+            <h2>Daily Quote</h2>
+            <div class="card neumorphic">
+                <div class="card-body">
+                    <blockquote class="blockquote">
+                        <p id="quoteText">Loading quote...</p>
+                        <footer class="blockquote-footer" id="quoteAuthor"></footer>
+                    </blockquote>
+                   <button id="refreshQuoteBtn" class="btn btn-secondary"><i class="fas fa-sync-alt"></i> Refresh Quote</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Notification Modal -->
+    <div class="modal fade" id="notificationModal" tabindex="-1" aria-labelledby="notificationModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="notificationModalLabel">Notification</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="notificationMessage">
+                    <!-- Message will be dynamically inserted here -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="footer mt-5 py-3 bg-light">
+        <div class="container text-center">
+            <span class="text-muted">&copy; 2024 Meditation Timer App</span>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

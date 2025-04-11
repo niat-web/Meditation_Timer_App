@@ -1,0 +1,177 @@
+/* style.css */
+
+/* CSS Reset (Basic) */
+body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #f0f0f0; /* Light background for light mode */
+    color: #333; /* Dark text for light mode */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* CSS Variables for Theming */
+:root {
+    --bg-color: #f0f0f0;
+    --text-color: #333;
+    --primary-color: #ff7f50; /* Coral */
+    --secondary-color: #dda0dd; /* Plum */
+    --accent-color: #fa8072;   /* Salmon */
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --neumorphic-bg: #ecf0f3;
+    --neumorphic-shadow-light: #ffffff;
+    --neumorphic-shadow-dark: #d1d9e6;
+
+}
+
+/* Dark Mode Theme */
+body.dark-mode {
+    --bg-color: #121212;
+    --text-color: #eee;
+    --shadow-color: rgba(255, 255, 255, 0.1);
+    --neumorphic-bg: #252525;
+    --neumorphic-shadow-light: #2c2c2c;
+    --neumorphic-shadow-dark: #1e1e1e;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+
+/* Header Styling */
+.header {
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+    color: #fff;
+    padding: 2rem 0;
+    margin-bottom: 2rem;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Neumorphism Card Styling */
+.neumorphic {
+    background: var(--neumorphic-bg);
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow:  5px 5px 10px var(--neumorphic-shadow-dark),
+                 -5px -5px 10px var(--neumorphic-shadow-light);
+    transition: all 0.3s ease;
+}
+
+.neumorphic:hover {
+  box-shadow:  7px 7px 12px var(--neumorphic-shadow-dark),
+               -7px -7px 12px var(--neumorphic-shadow-light);
+}
+
+
+/* Section Styling */
+section {
+    margin-bottom: 2rem;
+}
+
+section h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    color: var(--accent-color);
+}
+
+/* Form Styling */
+.form-control, .form-select {
+    border-radius: 10px;
+    border: none;
+    background: var(--neumorphic-bg);
+    color: var(--text-color);
+    box-shadow: inset 2px 2px 5px var(--neumorphic-shadow-dark),
+                inset -2px -2px 5px var(--neumorphic-shadow-light);
+}
+
+.form-control:focus, .form-select:focus {
+    outline: none;
+    box-shadow: inset 3px 3px 6px var(--neumorphic-shadow-dark),
+                inset -3px -3px 6px var(--neumorphic-shadow-light);
+}
+
+/* Button Styling */
+.btn {
+    border-radius: 10px;
+    border: none;
+    box-shadow: 3px 3px 7px var(--neumorphic-shadow-dark),
+                -3px -3px 7px var(--neumorphic-shadow-light);
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    box-shadow: 4px 4px 8px var(--neumorphic-shadow-dark),
+                -4px -4px 8px var(--neumorphic-shadow-light);
+    transform: translateY(-2px);
+}
+
+.btn:focus {
+    outline: none;
+    box-shadow: inset 3px 3px 6px var(--neumorphic-shadow-dark),
+                inset -3px -3px 6px var(--neumorphic-shadow-light);
+}
+
+/* Timer Display */
+#timerDisplay {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+/* History List */
+#historyList {
+    padding: 0;
+}
+
+#historyList li {
+    background: var(--neumorphic-bg);
+    border-radius: 10px;
+    margin-bottom: 0.5rem;
+    padding: 0.75rem;
+    box-shadow:  2px 2px 5px var(--neumorphic-shadow-dark),
+                 -2px -2px 5px var(--neumorphic-shadow-light);
+    color: var(--text-color);
+}
+
+/* Footer Styling */
+.footer {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    border-top: 1px solid var(--shadow-color);
+}
+
+/* Dark Mode Toggle Button */
+#darkModeToggle {
+    background: var(--neumorphic-bg);
+    color: var(--text-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header {
+        padding: 1.5rem 0;
+    }
+
+    .header h1 {
+        font-size: 2rem;
+    }
+
+    #timerDisplay {
+        font-size: 2.5rem;
+    }
+}
