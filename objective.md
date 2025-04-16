@@ -4,7 +4,7 @@
 This JavaScript project creates a meditation timer application that allows users to select a duration and meditation technique, start, pause, and reset the timer. It tracks meditation statistics (total sessions, total time) and maintains a history log of sessions. The application integrates with an external API to display inspirational quotes and supports a dark mode toggle. Technologies used are HTML, CSS, JavaScript, and Bootstrap.
 
 ## Output
-<iframe src="https://niat-web.github.io/Meditation_Timer_App" height="1000" width="300" title="Meditation_Timer_App"></iframe>
+<iframe src="https://niat-web.github.io/Meditation_Timer_App/" height="1000" width="300" title="Meditation_Timer_App"></iframe>
 
 ## Project Requirements
 **Technologies:** HTML, CSS, JavaScript, Bootstrap

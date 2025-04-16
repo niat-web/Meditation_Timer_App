@@ -47,7 +47,10 @@ body {
     background-color: var(--bg-color);
     color: var(--text-color);
 }
-
+/* Ensure card-body text color is white in dark mode */
+body.dark-mode .card-body {
+    color: var(--text-color);
+}
 
 /* Header Styling */
 .header {
